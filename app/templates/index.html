@@ -24,7 +24,7 @@
                 Text to classify
               </span>
             </div>
-            <div class="wrap-input100 validate-input p-t-31" data-validate = "Username is required">
+            <div class="wrap-input100 validate-input p-t-10 p-b-10" data-validate = "Username is required">
               <textarea class="input100" name="textarea" rows="8" id="text_to_predict"></textarea>
               <span class="focus-input100"></span>
             </div>
@@ -58,6 +58,7 @@
                       <div>This is a training that is a part of an AI course.</div>
                       <div>Objective: use AI to recognize which language the text is written in.</div>
                       <div>Limitations: currently works only with the following languages - ru / de / en / ukr </div>
+                      <div><a href='https://github.com/lBeJIuk/language_classifier' target="_blank"> Repository</a></div>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,11 +99,8 @@
       textarea = document.querySelector('#text_to_predict'),
       prediction_container = document.querySelector('#prediction_container')
     ;
-    $('#modal_prediction').on('click', function(e) {
-      prediction_container.innerHTML = 'Loading ...';
-      return e.preventDefault();
-    });
     $(".login100-form").on('submit',function(e){
+      prediction_container.innerHTML = 'Loading ...';
       e.preventDefault();
     });
 
