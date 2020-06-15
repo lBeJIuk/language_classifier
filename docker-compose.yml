@@ -9,7 +9,6 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
-    container_name: flask
     #networks:
     #  - znetwork
     volumes:
@@ -30,3 +29,8 @@ services:
         - "traefik.http.routers.http_lp_zarva_me.rule=Host(`lp.zarva.me`, `www.lp.zarva.me`)"
         - "traefik.http.routers.http_lp_zarva_me.middlewares=https_redirect"
         - "traefik.http.middlewares.https_redirect.redirectScheme.scheme=https"
+
+#networks:
+#  znetwork:
+#    external:
+#      name: zarva_me_znetwork
