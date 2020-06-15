@@ -76,7 +76,7 @@ def predict():
     classes = ['ru', 'de', 'en', 'ukr']
     ret = {}
     req_data = request.get_json()
-    app.logger.info(json.dumps(req_data))
+    app.logger.info(req_data['data'])
     
     toPredict = req_data['data'].strip() + ' '
     count = math.ceil(400 / len(toPredict))
