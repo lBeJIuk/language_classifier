@@ -22,11 +22,11 @@ services:
           - node.role == manager
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.zarva_me.tls=true"
-        - "traefik.http.routers.zarva_me.entryPoints=websecure"
-        - "traefik.http.routers.zarva_me.rule=Host(`zarva.me`, `www.zarva.me`)"
-        - "traefik.http.services.zarva_me.loadbalancer.server.port=80"
-        - "traefik.http.routers.http_zarva_me.entryPoints=web"
-        - "traefik.http.routers.http_zarva_me.rule=Host(`zarva.me`, `www.zarva.me`)"
-        - "traefik.http.routers.http_zarva_me.middlewares=https_redirect"
+        - "traefik.http.routers.lp_zarva_me.tls=true"
+        - "traefik.http.routers.lp_zarva_me.entryPoints=websecure"
+        - "traefik.http.routers.lp_zarva_me.rule=Host(`lp.zarva.me`, `www.lp.zarva.me`)"
+        - "traefik.http.services.lp_zarva_me.loadbalancer.server.port=80"
+        - "traefik.http.routers.http_lp_zarva_me.entryPoints=web"
+        - "traefik.http.routers.http_lp_zarva_me.rule=Host(`lp.zarva.me`, `www.lp.zarva.me`)"
+        - "traefik.http.routers.http_lp_zarva_me.middlewares=https_redirect"
         - "traefik.http.middlewares.https_redirect.redirectScheme.scheme=https"
