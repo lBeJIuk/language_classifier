@@ -99,6 +99,7 @@
       prediction_container = document.querySelector('#prediction_container')
     ;
     $('#modal_prediction').on('click', function(e) {
+      prediction_container.innerHTML = 'Loading ...';
       return e.preventDefault();
     });
     $(".login100-form").on('submit',function(e){
@@ -106,7 +107,6 @@
     });
 
     $('#modal_prediction').on('shown.bs.modal', function (e) {
-      prediction_container.innerHTML = 'Loading ...';
       fetch('/predict', {
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,11 @@
         return resp.json()
       })
       .then(function(respJSON) {
-        prediction_container.innerHTML = respJSON.cnn;
+        var ret = []
+        for (var item in respJSON.cnn) {
+          ret.push(item + ': ' + respJSON.cnn[item]);
+        }
+        prediction_container.innerHTML = ret.join('<br>');
       })
     });
   </script>

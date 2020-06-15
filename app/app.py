@@ -73,7 +73,7 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    classes = ['ru', 'de', 'en', 'uk']
+    classes = ['ru', 'de', 'en', 'ukr']
     ret = {}
     req_data = request.get_json()
     
